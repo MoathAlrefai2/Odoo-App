@@ -1,0 +1,102 @@
+/* =========================================================
+   HR Announcement Board — Kanban Styling
+   ========================================================= */
+
+.hr_announcement_kanban {
+    .hr_announcement_card {
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 12px;
+        border-left: 5px solid #adb5bd;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+        }
+
+        /* Priority colour accent on the left border */
+        &.ha_priority_1 { border-left-color: #6c757d; }   /* Low      */
+        &.ha_priority_2 { border-left-color: #fd7e14; }   /* High     */
+        &.ha_priority_3 { border-left-color: #dc3545; }   /* Very High*/
+
+        /* Pinned cards get a subtle gold background tint */
+        &.ha_pinned {
+            background: #fffdf0;
+            border-left-color: #ffc107;
+        }
+
+        /* Priority dot in the header */
+        .ha_priority_dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+            background: #adb5bd;
+            vertical-align: middle;
+        }
+        &.ha_priority_1 .ha_priority_dot { background: #6c757d; }
+        &.ha_priority_2 .ha_priority_dot { background: #fd7e14; }
+        &.ha_priority_3 .ha_priority_dot { background: #dc3545; }
+
+        /* Pinned badge */
+        .ha_pin_badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #856404;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 20px;
+            padding: 2px 8px;
+            margin-bottom: 8px;
+
+            i { margin-right: 3px; }
+        }
+
+        /* Card header */
+        .ha_card_header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .ha_card_title {
+                font-size: 1rem;
+                font-weight: 700;
+                color: #212529;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        /* Body — clamp long HTML content */
+        .ha_card_body {
+            font-size: 0.875rem;
+            color: #495057;
+            max-height: 120px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            margin-bottom: 12px;
+
+            p { margin: 0 0 4px; }
+        }
+
+        /* Footer */
+        .ha_card_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: #6c757d;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 8px;
+
+            i { margin-right: 3px; }
+        }
+    }
+}

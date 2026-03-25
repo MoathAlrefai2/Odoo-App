@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ═══ ROOT MENU ITEM ══════════════════════════════════════════════ -->
+        <menuitem id="menu_hr_announcement_root"
+                  name="HR Announcements"
+                  web_icon="hr_announcement_board,static/description/icon.png"
+                  sequence="90"/>
+
+        <!-- ═══ MY ANNOUNCEMENTS (employees — kanban dashboard) ════════════ -->
+        <menuitem id="menu_hr_announcement_board"
+                  name="My Announcements"
+                  parent="menu_hr_announcement_root"
+                  action="hr_announcement_board.action_hr_announcement_board"
+                  sequence="10"/>
+
+        <!-- ═══ MANAGE ANNOUNCEMENTS (HR Managers only) ════════════════════ -->
+        <menuitem id="menu_hr_announcement_manage"
+                  name="Manage Announcements"
+                  parent="menu_hr_announcement_root"
+                  action="hr_announcement_board.action_hr_announcement_manager"
+                  groups="hr_announcement_board.group_hr_announcement_manager"
+                  sequence="20"/>
+
+        <!-- Also add "My Announcements" under the native HR app menu -->
+        <menuitem id="menu_hr_root_announcement_board"
+                  name="My Announcements"
+                  parent="hr.menu_hr_root"
+                  action="hr_announcement_board.action_hr_announcement_board"
+                  sequence="99"/>
+    </data>
+</odoo>
